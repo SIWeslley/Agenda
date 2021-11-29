@@ -26,6 +26,7 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
+		System.out.println(action);
 		if (action.equalsIgnoreCase("/main")) {
 			contatos(request, response);
 		} else if (action.equalsIgnoreCase("/insert")) {
@@ -34,9 +35,20 @@ public class Controller extends HttpServlet {
 			listarContato(request, response);
 		} else if (action.equalsIgnoreCase("/update")) {
 			editarContato(request, response);
+		} else if (action.equalsIgnoreCase("/delete")) {
+			removerContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
+	}
+
+	private void removerContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String idcon = request.getParameter("idcon");
+		System.out.println(idcon);
+		contato.setIdcon(idcon);
+		dao.deletarContato(contato);
+		response.sendRedirect("main");
 	}
 
 	private void editarContato(HttpServletRequest request, HttpServletResponse response)
@@ -47,7 +59,7 @@ public class Controller extends HttpServlet {
 		contato.setEmail(request.getParameter("email"));
 		dao.alterarContato(contato);
 		response.sendRedirect("main");
-		
+
 	}
 
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)

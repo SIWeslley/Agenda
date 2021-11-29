@@ -10,6 +10,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v10.0"/>
 	<classpathentry kind="lib" path="C:/apache-tomcat-10.0.13/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Weslley Guedes/eclipse-workspace/mysql-connector-java-8.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weslley Guedes/Documents/eclipse-workspace/mysql-connector-java-8.0.27.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

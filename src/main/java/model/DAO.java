@@ -97,7 +97,21 @@ public class DAO {
 			pst.setString(4, contato.getIdcon());
 			pst.executeUpdate();
 			con.close();
-			
+
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+	}
+
+	public void deletarContato(JavaBeans contato) {
+		String delete = "DELETE FROM contatos WHERE idcon=?";
+
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(delete);
+			pst.setString(1, contato.getIdcon());
+			pst.executeUpdate();
+			con.close();
 		} catch (Exception e) {
 			System.err.println(e);
 		}
